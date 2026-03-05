@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFeild extends StatelessWidget {
-  const AppTextFeild({super.key, this.onTap});
+  const AppTextFeild({super.key, this.onTap, required this.titlel});
   final VoidCallback? onTap;
+  final String titlel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +20,7 @@ class AppTextFeild extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              "Complete Payment",
+              titlel ,
               style: textStyleFontSize22FontWeightMedium,
             ),
           ),

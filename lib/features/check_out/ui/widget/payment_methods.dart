@@ -56,9 +56,11 @@ class _PaymentMethodsState extends State<PaymentMethods> {
             ],
           ),
         ),
+        SizedBox(
+          height: 16.h,
+        ),
         CustomCreditCard(),
       ],
     );
   }
 }
-
