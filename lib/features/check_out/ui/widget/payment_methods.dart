@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'custom_continar_payment_method.dart';
+import 'custom_credit_card.dart';
 
 class PaymentMethods extends StatefulWidget {
   PaymentMethods({super.key});
@@ -54,7 +56,9 @@ class _PaymentMethodsState extends State<PaymentMethods> {
             ],
           ),
         ),
+        CustomCreditCard(),
       ],
     );
   }
 }
+

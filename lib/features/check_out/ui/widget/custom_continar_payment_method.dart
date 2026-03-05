@@ -26,7 +26,6 @@ class CustomContinarPaymentMethod extends StatelessWidget {
               color:
                   isSelect ? Color(0xFF34A853) : Colors.black.withOpacity(0.5),
               width: 1.5),
-
           color: Colors.transparent,
         ),
         child: Padding(
