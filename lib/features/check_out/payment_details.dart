@@ -1,4 +1,5 @@
 import 'package:checkout_payment_ui/core/routing/routes.dart';
+import 'package:checkout_payment_ui/features/check_out/ui/widget/payment_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,6 +19,7 @@ class PaymentDetails extends StatelessWidget {
             context.push(Routes.checkOutScreen);
           },
         ),
+        PaymentMethods(),
       ],
     ));
   }
