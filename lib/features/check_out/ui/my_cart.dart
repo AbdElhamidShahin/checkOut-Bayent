@@ -1,8 +1,12 @@
+import 'package:checkout_payment_ui/core/routing/routes.dart';
 import 'package:checkout_payment_ui/core/units/styles.dart';
 import 'package:checkout_payment_ui/features/check_out/ui/widget/custom_appbar_my_cart.dart';
 import 'package:checkout_payment_ui/features/check_out/ui/widget/custom_details_order_check_out.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../core/widget/app_text_feild.dart';
 
 class MyCart extends StatelessWidget {
   const MyCart({super.key});
@@ -21,7 +25,13 @@ class MyCart extends StatelessWidget {
           SizedBox(
             height: 24.h,
           ),
-          CustomDetailsOrderCheckOut(),
+          const CustomDetailsOrderCheckOut(),
+          SizedBox(
+            height: 12.h,
+          ),
+           AppTextFeild(onTap: (){
+            context.push(Routes.paymentDetails);
+          },),
         ],
       ),
     ));
