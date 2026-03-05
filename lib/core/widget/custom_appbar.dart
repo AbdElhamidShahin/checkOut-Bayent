@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppbarMyCart extends StatelessWidget {
-  const CustomAppbarMyCart({super.key});
-
+  const CustomAppbarMyCart({super.key, required this.title, this.onPressed});
+  final String title;
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
       title: Text(
-        "My Cart",
+        title,
         style: textStyleFontSize25FontWeightInter,
       ),
       leading: IconButton(
@@ -18,7 +19,7 @@ class CustomAppbarMyCart extends StatelessWidget {
             Icons.arrow_back,
             size: 32.sp,
           ),
-          onPressed: () {}),
+          onPressed: onPressed),
     );
   }
 }

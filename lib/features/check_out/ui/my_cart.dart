@@ -1,6 +1,5 @@
 import 'package:checkout_payment_ui/core/routing/routes.dart';
-import 'package:checkout_payment_ui/core/units/styles.dart';
-import 'package:checkout_payment_ui/features/check_out/ui/widget/custom_appbar_my_cart.dart';
+import 'package:checkout_payment_ui/core/widget/custom_appbar.dart';
 import 'package:checkout_payment_ui/features/check_out/ui/widget/custom_details_order_check_out.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +16,10 @@ class MyCart extends StatelessWidget {
         body: SafeArea(
       child: Column(
         children: [
-          const CustomAppbarMyCart(),
+          CustomAppbarMyCart(
+            title: 'My Cart',
+            onPressed: () {},
+          ),
           SizedBox(
             height: 12.h,
           ),
@@ -29,9 +31,12 @@ class MyCart extends StatelessWidget {
           SizedBox(
             height: 12.h,
           ),
-           AppTextFeild(onTap: (){
-            context.push(Routes.paymentDetails);
-          },),
+          AppTextFeild(
+            titlel: "Complete Payment",
+            onTap: () {
+              context.push(Routes.paymentDetails);
+            },
+          ),
         ],
       ),
     ));
