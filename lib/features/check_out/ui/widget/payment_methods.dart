@@ -6,8 +6,10 @@ import 'custom_continar_payment_method.dart';
 import 'custom_credit_card.dart';
 
 class PaymentMethods extends StatefulWidget {
-  PaymentMethods({super.key});
-
+  PaymentMethods(
+      {super.key, required this.formKey, required this.autovalidateMode});
+  final GlobalKey<FormState> formKey;
+  final AutovalidateMode autovalidateMode;
   @override
   State<PaymentMethods> createState() => _PaymentMethodsState();
 }
@@ -59,7 +61,10 @@ class _PaymentMethodsState extends State<PaymentMethods> {
         SizedBox(
           height: 16.h,
         ),
-        CustomCreditCard(),
+        CustomCreditCard(
+          formKey: widget.formKey,
+          autovalidateMode: widget.autovalidateMode,
+        ),
       ],
     );
   }
