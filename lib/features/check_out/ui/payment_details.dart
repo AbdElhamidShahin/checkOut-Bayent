@@ -4,7 +4,7 @@ import 'package:checkout_payment_ui/features/check_out/ui/widget/payment_methods
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../core/widget/custom_appbar.dart';
+import '../../../core/widget/custom_appbar.dart';
 
 class PaymentDetails extends StatefulWidget {
   const PaymentDetails({super.key});
@@ -44,6 +44,7 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                   autovalidateMode = AutovalidateMode.always;
                 });
               }
+              context.push(Routes.thankYouScreen);
             },
           ),
         )
