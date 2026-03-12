@@ -1,5 +1,6 @@
 import 'package:checkout_payment_ui/core/routing/routes.dart';
 import 'package:checkout_payment_ui/core/widget/app_text_feild.dart';
+import 'package:checkout_payment_ui/features/check_out/ui/widget/custom_credit_card.dart';
 import 'package:checkout_payment_ui/features/check_out/ui/widget/payment_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,8 @@ class _PaymentDetailsState extends State<PaymentDetails> {
             context.push(Routes.checkOutScreen);
           },
         ),
-        PaymentMethods(
+        PaymentMethods(),
+        CustomCreditCard(
           formKey: formKey,
           autovalidateMode: autovalidateMode,
         ),

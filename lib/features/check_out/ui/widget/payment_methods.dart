@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'custom_continar_payment_method.dart';
-import 'custom_credit_card.dart';
 
 class PaymentMethods extends StatefulWidget {
-  PaymentMethods(
-      {super.key, required this.formKey, required this.autovalidateMode});
-  final GlobalKey<FormState> formKey;
-  final AutovalidateMode autovalidateMode;
+  PaymentMethods({
+    super.key,
+  });
+
   @override
   State<PaymentMethods> createState() => _PaymentMethodsState();
 }
 
 class _PaymentMethodsState extends State<PaymentMethods> {
+  @override
   int selectIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -60,10 +59,6 @@ class _PaymentMethodsState extends State<PaymentMethods> {
         ),
         SizedBox(
           height: 16.h,
-        ),
-        CustomCreditCard(
-          formKey: widget.formKey,
-          autovalidateMode: widget.autovalidateMode,
         ),
       ],
     );
