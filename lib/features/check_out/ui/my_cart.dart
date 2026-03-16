@@ -69,9 +69,7 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
           const AppTextFeild(
             titlel: 'Continue',
           ),
-          SizedBox(
-            height: 16.h,
-          ),
+          SizedBox(height: 16.h),
         ],
       ),
     );
