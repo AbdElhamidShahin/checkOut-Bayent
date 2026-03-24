@@ -14,7 +14,7 @@ class PaymentMethodOptions {
       );
 
   Map<String, dynamic> toJson() => {
-    if (card != null) 'card': card!.toJson(),
-    if (link != null) 'link': link!.toJson(),
-  };
+        if (card != null) 'card': card!.toJson(),
+        if (link != null) 'link': link!.toJson(),
+      };
 }
