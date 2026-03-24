@@ -7,7 +7,6 @@ class ApiService {
       required body,
       required String token,
       String? contentType}) async {
-
     var response = await dio.post(url,
         data: body,
         options: Options(
