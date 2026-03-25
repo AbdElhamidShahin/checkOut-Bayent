@@ -2,7 +2,7 @@ import 'package:checkout_payment_ui/core/units/api_constants.dart';
 import 'package:checkout_payment_ui/core/units/api_service.dart';
 import 'package:checkout_payment_ui/features/check_out/data/model/payment_intent_input_model.dart';
 import 'package:checkout_payment_ui/features/check_out/data/model/payment_intent_model.dart';
-
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 class StripeService {
   final ApiService apiService = ApiService();
@@ -14,5 +14,12 @@ class StripeService {
         token: ApiConstants.secretKey);
     var paymentIntentModel = PaymentIntentModel.fromJson(response.data);
     return paymentIntentModel;
+  }
+
+  Future initPaymentSheet({required String paymentIntetClientSecret}) async {
+    Stripe.instance.initPaymentSheet(
+        paymentSheetParameters: SetupPaymentSheetParameters(
+            paymentIntentClientSecret: paymentIntetClientSecret,
+            merchantDisplayName: "abdo"));
   }
 }
