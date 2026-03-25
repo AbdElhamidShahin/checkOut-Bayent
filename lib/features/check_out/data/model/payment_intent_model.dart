@@ -17,7 +17,7 @@ class PaymentIntentModel {
   final bool? livemode;
   final Tip? metadata;
   final PaymentMethodOptions? paymentMethodOptions;
-  final List<String>? paymentMethodTypes;
+  final List<dynamic>? paymentMethodTypes;
   final String? status;
 
   const PaymentIntentModel({
@@ -42,27 +42,15 @@ class PaymentIntentModel {
       PaymentIntentModel(
         id: json['id'],
         amount: json['amount'],
-        amountDetails: json['amount_details'] != null
-            ? AmountDetails.fromJson(json['amount_details'])
-            : null,
         amountReceived: json['amount_received'],
-        automaticPaymentMethods: json['automatic_payment_methods'] != null
-            ? AutomaticPaymentMethods.fromJson(
-                json['automatic_payment_methods'])
-            : null,
         captureMethod: json['capture_method'],
         clientSecret: json['client_secret'],
         confirmationMethod: json['confirmation_method'],
         created: json['created'],
         currency: json['currency'],
         livemode: json['livemode'],
-        metadata:
-            json['metadata'] != null ? Tip.fromJson(json['metadata']) : null,
-        paymentMethodOptions: json['payment_method_options'] != null
-            ? PaymentMethodOptions.fromJson(json['payment_method_options'])
-            : null,
         paymentMethodTypes:
-            (json['payment_method_types'] as List?)?.cast<String>(),
+            (json['payment_method_types'] as List?)?.cast<dynamic>(),
         status: json['status'],
       );
 

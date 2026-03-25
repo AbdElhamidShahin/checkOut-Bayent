@@ -5,7 +5,8 @@ import 'package:checkout_payment_ui/features/check_out/logic/cubit/payment_cubit
 import 'package:checkout_payment_ui/features/check_out/logic/cubit/payment_state.dart';
 import 'package:checkout_payment_ui/features/check_out/ui/widget/custom_details_order_check_out.dart';
 import 'package:checkout_payment_ui/features/check_out/ui/widget/payment_methods.dart';
-import 'package:checkout_payment_ui/features/check_out/ui/widget/payment_methods_bottom_sheet.dart' show PaymentMethodsBottomSheet;
+import 'package:checkout_payment_ui/features/check_out/ui/widget/payment_methods_bottom_sheet.dart'
+    show PaymentMethodsBottomSheet;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -57,4 +58,3 @@ class MyCart extends StatelessWidget {
     ));
   }
 }
-

@@ -1,11 +1,17 @@
+import 'package:checkout_payment_ui/core/units/api_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'core/routing/app_router.dart';
-import 'features/check_out/ui/my_cart.dart';
 
 void main() async {
-  runApp(const CheckoutApp());
+
+  Stripe.publishableKey= ApiConstants.publishableKey;
   await ScreenUtil.ensureScreenSize();
+
+
+
+runApp(const CheckoutApp());
 }
 
 class CheckoutApp extends StatelessWidget {
