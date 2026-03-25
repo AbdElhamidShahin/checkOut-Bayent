@@ -1,8 +1,15 @@
+import 'package:checkout_payment_ui/core/routing/routes.dart';
 import 'package:checkout_payment_ui/core/widget/custom_appbar.dart';
+import 'package:checkout_payment_ui/features/check_out/data/repos/chekout_repo_impl.dart';
+import 'package:checkout_payment_ui/features/check_out/logic/cubit/payment_cubit.dart';
+import 'package:checkout_payment_ui/features/check_out/logic/cubit/payment_state.dart';
 import 'package:checkout_payment_ui/features/check_out/ui/widget/custom_details_order_check_out.dart';
 import 'package:checkout_payment_ui/features/check_out/ui/widget/payment_methods.dart';
+import 'package:checkout_payment_ui/features/check_out/ui/widget/payment_methods_bottom_sheet.dart' show PaymentMethodsBottomSheet;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/widget/app_text_feild.dart';
 
 class MyCart extends StatelessWidget {
@@ -37,7 +44,10 @@ class MyCart extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16.r)),
                   context: context,
                   builder: (context) {
-                    return PaymentMethodsBottomSheet();
+                    return BlocProvider(
+                        create: (BuildContext context) =>
+                            PaymentCubit(ChekoutRepoImpl()),
+                        child: PaymentMethodsBottomSheet());
                   });
               // context.push(Routes.paymentDetails);
             },
@@ -48,30 +58,3 @@ class MyCart extends StatelessWidget {
   }
 }
 
-class PaymentMethodsBottomSheet extends StatelessWidget {
-  PaymentMethodsBottomSheet({super.key});
-  final GlobalKey<FormState> formKey = GlobalKey();
-  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            height: 16.h,
-          ),
-          PaymentMethods(),
-          SizedBox(
-            height: 32.h,
-          ),
-          const AppTextFeild(
-            titlel: 'Continue',
-          ),
-          SizedBox(height: 16.h),
-        ],
-      ),
-    );
-  }
-}

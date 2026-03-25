@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFeild extends StatelessWidget {
-  const AppTextFeild({super.key, this.onTap, required this.titlel});
+  const AppTextFeild(
+      {super.key, this.onTap, required this.titlel, this.isLoading = false});
   final VoidCallback? onTap;
+  final bool isLoading;
   final String titlel;
   @override
   Widget build(BuildContext context) {
@@ -19,10 +21,12 @@ class AppTextFeild extends StatelessWidget {
             color: const Color(0xFF34A853),
           ),
           child: Center(
-            child: Text(
-              titlel ,
-              style: textStyleFontSize22FontWeightMedium,
-            ),
+            child: isLoading
+                ? CircularProgressIndicator()
+                : Text(
+                    titlel,
+                    style: textStyleFontSize22FontWeightMedium,
+                  ),
           ),
         ),
       ),

@@ -35,3 +35,8 @@ class StripeService {
     await displayPaymentSheet();
   }
 }
+
+//createPaymentIntent
+//initPaymentSheet
+//displayPaymentSheet
+//makePayment
